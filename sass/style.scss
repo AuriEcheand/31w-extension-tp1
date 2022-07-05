@@ -1,8 +1,19 @@
 .carrousel {
     position: absolute;
-    width : 50vw;
-    height : 50vh;
-    top : 25vh;
-    left: 25vw;
-    background-color: #aaa ;
+    width : 100vw;
+    height : 100vh;
+    top :0;
+    left: 0;
+    background-color: aqua ;    
+}
+
+@media screen and (min-width:700px){
+    .carrousel {
+        position: absolute;
+        width : 50vw;
+        height : 50vh;
+        top : 25vh;
+        left: 25vw;
+      
+    }
 }

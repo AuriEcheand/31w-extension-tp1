@@ -10,10 +10,11 @@
     console.log(elmGalerie__img[0].getAttribute('src'))
 
     for (const img of elmGalerie__img){
-        img.addEventListener('mousedown', function(){
-            console.log(this.getAttribute('src'))
-            elmCarrousel.classList.add('carrousel__active')
-            console.log(elmCarrousel.classList)
+            let elmImg = document
+        //img.addEventListener('mousedown', function(){
+           // console.log(this.getAttribute('src'))
+            //elmCarrousel.classList.add('carrousel__active')
+            //console.log(elmCarrousel.classList)
 
         })
     }
