@@ -29,7 +29,7 @@ function genere_carrousel(){
 ///////////////////////////HTML
 $contenu = '<div class="carrousel"';
 $contenu .= '<button class="carrousel__fermeture">X</button>';
-$contenu .= '<figure class="carrousel__img"></figure>';
+$contenu .= '<figure class="carrousel__figure"></figure>';
 $contenu .= '<form class="carrousel__radio"></form>';
 $contenu .= '</div><!--fin du carrousel-->';
 return $contenu;
