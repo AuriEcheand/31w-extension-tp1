@@ -27,9 +27,13 @@ add_action('wp_enqueue_scripts', 'carrousel_31W_enqueue');
 
 function genere_carrousel(){
 ///////////////////////////HTML
+// Le conteneur du carrousel
 $contenu = '<div class="carrousel"';
+ // Le bouton fermeture
 $contenu .= '<button class="carrousel__fermeture">X</button>';
+// Le conteneur d'images
 $contenu .= '<figure class="carrousel__figure"></figure>';
+// Le formulaire des radio bouton pour naviguer d'une image à l'autre
 $contenu .= '<form class="carrousel__radio"></form>';
 $contenu .= '</div><!--fin du carrousel-->';
 return $contenu;
