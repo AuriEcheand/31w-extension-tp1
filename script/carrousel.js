@@ -24,3 +24,11 @@
             elmCarrousel.classList.add('carrousel__ouvrir') 
     }) 
     }
+  /**
+ * Écouteur pour fermer le carrousel
+ * 
+ */
+    elmCarrousel__fermeture.addEventListener('mousedown', function(){
+        elmCarrousel.classList.remove('carrousel__ouvrir') 
+    })
+
