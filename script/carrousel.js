@@ -44,5 +44,19 @@
         elmImg.dataset.index = index // on index l'élément img pour pouvoir l'associé au bon radio bouton
     }
   
- 
+ /**
+ * Ajouter un bouton radio créé dynamiquement dans le conteneur elmCarrousel__radio. Ce radio bouton permettra de
+ * naviguer dans le carrousel d'une image à l'autre
+ * 
+ * @param aucun
+ * 
+ * */
 
+    function ajouter_elmRadio(){
+        let elmRadio = document.createElement('input')
+        elmRadio.setAttribute('type','radio')
+        elmRadio.setAttribute('name','radImg')
+        elmRadio.dataset.index = index
+        index = index+1
+        elmCarrousel__radio.appendChild(elmRadio)
+        
