@@ -59,4 +59,13 @@
         elmRadio.dataset.index = index
         index = index+1
         elmCarrousel__radio.appendChild(elmRadio)
-        
+  /* Écouteur pour sélectionner une nouvelle image */ 
+        elmRadio.addEventListener('mousedown', function(){    
+            elmCarrousel__figure.children[this.dataset.index].classList.add('carrousel__figure__img--activer')
+        })
+    }
+  
+
+
+
+})()      
