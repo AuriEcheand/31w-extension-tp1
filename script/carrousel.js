@@ -31,4 +31,18 @@
     elmCarrousel__fermeture.addEventListener('mousedown', function(){
         elmCarrousel.classList.remove('carrousel__ouvrir') 
     })
+  /**
+ * Ajouter un img créé dynamiquement dans le conteneur elmCarrousel__figure
+ * 
+ * @param {ChildNode} img   Une image de la galerie
+ */
+    function ajouter_elmImg(img){
+        let elmImg = document.createElement('img') // création d'un élément img
+        elmImg.classList.add('carrousel__figure__img') // ajout d'une classe css
+        elmImg.setAttribute('src', img.getAttribute('src')) // on récupère l'adresse URL de l'image de la galerie
+        elmCarrousel__figure.appendChild(elmImg) // ajouter l'élément img dans le carrousel
+        elmImg.dataset.index = index // on index l'élément img pour pouvoir l'associé au bon radio bouton
+    }
+  
+ 
 
