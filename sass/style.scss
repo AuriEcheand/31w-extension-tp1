@@ -1,21 +1,22 @@
 .carrousel {
-    position: absolute;
+    position : absolute;
     width : 100vw;
     height : 100vh;
-    top :0;
-    left: 0;
-    background-color: aqua ;    
-}
-
-@media screen and (min-width:700px){
-    .carrousel {
-        position: absolute;
-        width : 50vw;
-        height : 50vh;
+    top:0;
+    left : 0;
+    background-color: rgb(236, 241, 241) ; 
+    z-index: 9;
+    opacity : 0;
+    transform : scale(0);
+    transition : all 1s; 
+    @media screen and (min-width:700px){
+        width : 75vw;
+        height : 75vh;
         top : 25vh;
         left: 25vw;
-      
-    }
+          
+}
+
 }
 .carrousel__ouvrir
 {
@@ -35,7 +36,13 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
 
+}
+.carrousel__figure__img--activer
+{
+    opacity: 1;
 }
 .carrousel__radio
 {
@@ -44,6 +51,7 @@
     left: 0;
     display: flex;
     justify-content: center;
+    width : 100%;
 }
 .carrousel__radio__ input
 {
