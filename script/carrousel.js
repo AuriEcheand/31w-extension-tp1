@@ -16,22 +16,27 @@
     let elmCarrousel__radio = document.querySelector('.carrousel__radio')
     console.log(elmGalerieImg[0].getAttribute('src'))
     let index = 0 // L'index qui permettra d'indexer les images du carrousel et les radios bouton
+    let ancien_index = -1
+    let compteur =0
     for (const img of elmGalerieImg){
         ajouter_elmImg(img)
         ajouter_elmRadio()
         // écouteur sur la galerie pour ouvrir le carrousel
         img.addEventListener('mousedown', function(){
-            elmCarrousel.classList.add('carrousel__ouvrir') 
+            elmCarrousel.classList.add('carrousel__ouvrir')
+            index = this.dataset.index
+            affiche_carrousel_img() 
     }) 
     }
-  /**
+/**
  * Écouteur pour fermer le carrousel
  * 
  */
     elmCarrousel__fermeture.addEventListener('mousedown', function(){
         elmCarrousel.classList.remove('carrousel__ouvrir') 
     })
-  /**
+
+/**
  * Ajouter un img créé dynamiquement dans le conteneur elmCarrousel__figure
  * 
  * @param {ChildNode} img   Une image de la galerie
@@ -43,8 +48,7 @@
         elmCarrousel__figure.appendChild(elmImg) // ajouter l'élément img dans le carrousel
         elmImg.dataset.index = index // on index l'élément img pour pouvoir l'associé au bon radio bouton
     }
-  
- /**
+/**
  * Ajouter un bouton radio créé dynamiquement dans le conteneur elmCarrousel__radio. Ce radio bouton permettra de
  * naviguer dans le carrousel d'une image à l'autre
  * 
@@ -59,13 +63,19 @@
         elmRadio.dataset.index = index
         index = index+1
         elmCarrousel__radio.appendChild(elmRadio)
-  /* Écouteur pour sélectionner une nouvelle image */ 
-        elmRadio.addEventListener('mousedown', function(){    
-            elmCarrousel__figure.children[this.dataset.index].classList.add('carrousel__figure__img--activer')
+        /* Écouteur pour sélectionner une nouvelle image */ 
+        elmRadio.addEventListener('mousedown', function(){ 
+            index = this.dataset.index
+            affiche_carrousel_img()
         })
     }
-  
-
-
-
-})()      
+    function affiche_carrousel_img()
+    {   
+            if (ancien_index != -1){
+                elmCarrousel__figure.children[ancien_index].classList.remove('carrousel__figure__img--activer')
+            }   
+            elmCarrousel__figure.children[index].classList.add('carrousel__figure__img--activer')
+            ancien_index = index
+    }
+      
+})()
